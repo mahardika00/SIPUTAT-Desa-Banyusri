@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - SIPUTAT Desa Banyusri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        /* Header Pemerintahan */
+        .government-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1d4ed8 100%);
+            padding: 0;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .header-top {
+            background: #0f172a;
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 50px;
+            background: white;
+            border-bottom: 3px solid #dc2626;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #dc2626, #ef4444);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .header-text {
+            color: #1e293b;
+        }
+
+        .header-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin: 0;
+        }
+
+        .header-text p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-btn {
+            background: linear-gradient(45deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .header-btn:hover {
+            background: linear-gradient(45deg, #1d4ed8, #2563eb);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
+        }
+
+        .header-btn.secondary {
+            background: white;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+        }
+
+        .header-btn.secondary:hover {
+            background: #1e40af;
+            color: white;
+        }
+
+        /* Navigation */
+        .main-nav {
+            background: #1e40af;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom-color: #fbbf24;
+        }
+
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.15);
+            border-bottom-color: #fbbf24;
+        }
+
+        /* Registration Form */
+        .registration-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .registration-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .registration-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1e40af;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .registration-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .form-text {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 5px;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-check-input {
+            width: 18px;
+            height: 18px;
+            accent-color: #1e40af;
+        }
+
+        .form-check-label {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .form-check-label a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .form-check-label a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-register {
+            width: 100%;
+            background: linear-gradient(45deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-register:hover {
+            background: linear-gradient(45deg, #1d4ed8, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #64748b;
+        }
+
+        .login-link a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #3b82f6;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #3b82f6;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                padding: 15px 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .registration-card {
+                padding: 30px 20px;
+            }
+
+            .registration-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="government-header">
+        <div class="header-top">
+            Portal Resmi Pemerintah Desa Bawu - Sistem Informasi Pusat Pertanahan Terpadu
+        </div>
+        <div class="header-main">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="header-text">
+                    <h1>SIPUTAT</h1>
+                    <p>Sistem Informasi Pusat Pertanahan Desa Banyusri</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="login.html" class="header-btn">
+                    <i class="fas fa-sign-in-alt"></i> Portal Masuk
+                </a>
+                <a href="register.html" class="header-btn secondary">
+                    <i class="fas fa-user-plus"></i> Registrasi
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i> Beranda
+            </a>
+            <a href="layanan.html" class="nav-link">
+                <i class="fas fa-concierge-bell"></i> Layanan
+            </a>
+            <a href="Data Informasi.html" class="nav-link">
+                <i class="fas fa-database"></i> Data & Informasi
+            </a>
+            <a href="profil.html" class="nav-link">
+                <i class="fas fa-building"></i> Profil Desa
+            </a>
+            <a href="kontak.html" class="nav-link">
+                <i class="fas fa-phone"></i> Kontak
+            </a>
+        </div>
+    </nav>
+
+    <section class="registration-section">
+        <div class="registration-card">
+            <h2 class="registration-title">Buat Akun Baru</h2>
+            
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="namaLengkap" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="namaLengkap" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nik" class="form-label">Nomor Induk Kependudukan (NIK)</label>
+                    <input type="text" class="form-control" id="nik" required>
+                    <small class="form-text">NIK harus sesuai dengan Kartu Keluarga/KTP</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Alamat Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="noHp" class="form-label">Nomor Handphone</label>
+                    <input type="tel" class="form-control" id="noHp" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="alamat" class="form-label">Alamat Tempat Tinggal</label>
+                    <textarea class="form-control" id="alamat" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                    <small class="form-text">Minimal 8 karakter, kombinasi huruf dan angka</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Konfirmasi Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" required>
+                </div>
+                
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                    <label for="agreeTerms" class="form-check-label">
+                        Saya menyetujui <a href="#">Syarat dan Ketentuan</a> serta <a href="#">Kebijakan Privasi</a> SIPUTAT
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-register">
+                    <i class="fas fa-user-plus"></i> Daftar Sekarang
+                </button>
+                
+                <div class="login-link">
+                    Sudah punya akun? <a href="login.html">Masuk disini</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Pemerintah Desa Banyusri</h3>
+                <p>Sistem Informasi Pertanahan Digital yang transparan dan akuntabel untuk melayani masyarakat dengan lebih baik.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Layanan</h3>
+                <p><a href="peta.html">Peta Digital</a></p>
+                <p><a href="database.html">Database Pertanahan</a></p>
+                <p><a href="layanan.html">Administrasi Online</a></p>
+                <p><a href="monitoring.html">Monitoring</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Kontak Kami</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jl. Desa Bawu No. 123, Kecamatan XYZ</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <span>(0274) 123-4567</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>siputat@desabawu.go.id</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Jam Operasional</h3>
+                <p>Senin - Jumat: 08:00 - 16:00 WIB</p>
+                <p>Sabtu: 08:00 - 12:00 WIB</p>
+                <p>Minggu: Libur</p>
+                <p style="margin-top: 15px; color: #3b82f6;">Layanan Online: 24/7</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025-Pemerintah Desa Banyusri. Sistem Informasi Pusat Pertanahan (SIPUTAT). Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validasi password
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Password dan Konfirmasi Password tidak cocok!');
+                return;
+            }
+            
+            // Validasi NIK (16 digit angka)
+            const nik = document.getElementById('nik').value;
+            if (!/^\d{16}$/.test(nik)) {
+                alert('NIK harus berupa 16 digit angka!');
+                return;
+            }
+            
+            // Jika validasi berhasil, tampilkan pesan sukses
+            alert('Pendaftaran berhasil! Silakan cek email Anda untuk verifikasi akun.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

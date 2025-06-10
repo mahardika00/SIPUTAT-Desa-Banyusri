@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim Kami - SIPUTAT Desa Banyusri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #1e293b;
+        }
+
+        /* Header Pemerintahan */
+        .government-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1d4ed8 100%);
+            padding: 0;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .header-top {
+            background: #0f172a;
+            color: white;
+            padding: 12px 0;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background: white;
+            border-bottom: 4px solid #dc2626;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, #dc2626, #ef4444);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .header-text {
+            color: #1e293b;
+        }
+
+        .header-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(30, 64, 175, 0.1);
+        }
+
+        .header-text p {
+            font-size: 1rem;
+            color: #64748b;
+            margin: 5px 0 0 0;
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-btn {
+            background: linear-gradient(45deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(30, 64, 175, 0.2);
+        }
+
+        .header-btn:hover {
+            background: linear-gradient(45deg, #1d4ed8, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+        }
+
+        .header-btn.secondary {
+            background: white;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+        }
+
+        .header-btn.secondary:hover {
+            background: #1e40af;
+            color: white;
+        }
+
+        /* Navigation */
+        .main-nav {
+            background: #1e40af;
+            padding: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 20px 35px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-bottom-color: #fbbf24;
+        }
+
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.2);
+            border-bottom-color: #fbbf24;
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1e293b;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            border-radius: 2px;
+        }
+
+        .team-description {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            color: #64748b;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6, #8b5cf6);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .team-card.leader {
+            border: 2px solid #fbbf24;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        }
+
+        .team-card.leader::before {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b);
+        }
+
+        .team-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            border: 5px solid #e2e8f0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-card.leader .team-photo {
+            border: 5px solid #fbbf24;
+        }
+
+        .team-card:hover .team-photo {
+            transform: scale(1.05);
+        }
+
+        .leader-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .team-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .team-nim {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .team-position {
+            color: #dc2626;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: #fef2f2;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .team-bio {
+            color: #64748b;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .team-social a {
+            color: #64748b;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 50%;
+            background: #f8fafc;
+        }
+
+        .team-social a:hover {
+            color: #1e40af;
+            background: #dbeafe;
+            transform: translateY(-2px);
+        }
+
+        .team-contact {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .team-contact p {
+            font-size: 0.85rem;
+            color: #1e40af;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Department Section */
+        .department-section {
+            margin-top: 100px;
+        }
+
+        .department-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .department-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+
+        .department-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .department-description {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .department-member {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .department-member:hover {
+            background: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+            color: #7c3aed;
+        }
+
+        .member-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .member-position {
+            color: #dc2626;
+            font-weight: 600;
+            margin-bottom: 15px;
+            background: #fef2f2;
+            padding: 6px 15px;
+            border-radius: 15px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .member-bio {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 30px 40px;
+            margin-top: 120px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #3b82f6;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: #3b82f6;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            color: #3b82f6;
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            margin-top: 60px;
+            padding-top: 30px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 25px;
+                padding: 25px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                padding: 18px 25px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .department-card {
+                padding: 30px;
+            }
+
+            .main-content {
+                padding: 50px 20px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .team-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .team-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <header class="government-header">
+        <div class="header-top">
+            Portal Resmi Pemerintah Desa Banyusri - Sistem Informasi Pusat Pertanahan Terpadu
+        </div>
+        <div class="header-main">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="header-text">
+                    <h1>SIPUTAT</h1>
+                    <p>Sistem Informasi Pusat Pertanahan Desa Banyusri</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="login.html" class="header-btn">
+                    <i class="fas fa-sign-in-alt"></i> Portal Masuk
+                </a>
+                <a href="register.html" class="header-btn secondary">
+                    <i class="fas fa-user-plus"></i> Registrasi
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">
+                <i class="fas fa-home"></i> Beranda
+            </a>
+            <a href="layanan.html" class="nav-link">
+                <i class="fas fa-concierge-bell"></i> Layanan
+            </a>
+            <a href="data.html" class="nav-link">
+                <i class="fas fa-database"></i> Data & Informasi
+            </a>
+            <a href="profil.html" class="nav-link">
+                <i class="fas fa-building"></i> Profil Desa
+            </a>
+            <a href="tim.html" class="nav-link active">
+                <i class="fas fa-users"></i> Tim Kami
+            </a>
+            <a href="kontak.html" class="nav-link">
+                <i class="fas fa-phone"></i> Kontak
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="team-section">
+            <h2 class="section-title">Tim Hebat Kami</h2>
+            <p class="team-description">
+                Kenali tim profesional di balik Sistem Informasi Pusat Pertanahan Desa Banyusri. 
+                Kami berdedikasi untuk menyediakan layanan pertanahan yang transparan, akurat, 
+                dan mudah diakses oleh seluruh masyarakat.
+            </p>
+            
+            <div class="team-grid">
+                <!-- Team Leader Card - Andy Naufal Mahardika -->
+                <div class="team-card leader">
+                    <div class="leader-badge">
+                        <i class="fas fa-crown"></i> Koordinator
+                    </div>
+                    <img src="Image/Opang.jpg.jpg" alt="Andy Naufal Mahardika - Ketua Kelompok" class="team-photo">
+                    <h3 class="team-name">Andy Naufal Mahardika</h3>
+                    <p class="team-nim">NIM: 40030622650066</p>
+                    <p class="team-position">Koordinator Kelompok</p>
+                    <p class="team-bio">
+                        Memimpin implementasi sistem SIPUTAT, mengelola sistem dan data pertanahan,
+                        memastikan keakuratan informasi, serta menjalin koordinasi dengan masyarakat dan pihak terkait.
+                        Bertanggung jawab penuh atas kesuksesan proyek dan koordinasi tim.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="team-contact">
+                    </div>
+                </div>
+                
+                <!-- Additional Team Members -->
+                <div class="team-card">
+                    <div class=background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); color: #1e40af;">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <img src="Image/Yulfa.jpg" alt="Yulfa Aji Wensdiya - Anggota Kelompok 1"class="team-photo">
+                    <h3 class="team-name">Yulfa Aji Wensdiya</h3>
+                    <p class="team-nim">NIM: 40030622650085</p>
+                    <p class="team-position">Anggota Kelompok 1</p>
+                    <p class="team-bio">
+                        Bertanggung jawab atas pembuatan diagram alir (flowchart) dan skema (diagram struktural atau alur sistem),
+                        mencakup menganalisis proses kerja atau sistem, mengumpulkan data teknis dan fungsional, mendesain diagram alir dan skema struktur.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="team-contact">
+                       
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class=background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); color: #16a34a;">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <img src="Image/Nisrin.jpg" alt="Yulfa Aji Wensdiya - Anggota Kelompok 2"class="team-photo">
+                    <h3 class="team-name">Nisrina Intan Nuraini</h3>
+                    <p class="team-nim">NIM: 40030622650048</p>
+                    <p class="team-position">Anggota Kelompok 2</p>
+                    <p class="team-bio">
+                        Mengumpulkan dan menganalisis data pertanahan peta kepemilikan tanah.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="team-contact">
+                       
+                    </div>
+                </div>
+           
+                <div class="team-card">
+                        <div class=background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #d97706;">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <img src="Image/Eltana.jpg" Eltana Bayu Pramudya - Anggota Kelomppok 3" class="team-photo">
+                        <h3 class="member-name">Eltana Bayu Pramudya<h3>
+                            <p class="team-nim">NIM: 40030622650071</p>
+                        <p class="member-position">Anggota Kelompok 3</p>
+                        <p class="member-bio">
+                            Mengumpulkan dan menganalisis data pertanahan peta bidang tanah.
+                        </p>
+                    </p>
+                    <div class="team-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="team-contact">
+
+                    </div>
+                </div>
+                    
+                    <div class="team-card">
+                        <div class=background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #d97706;">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <img src="Image/Rara.jpg" Khusnida Riarasti - Anggota Kelomppok 4" class="team-photo">
+                        <h3 class="member-name">Khusnida Riarasti</h3>
+                            <p class="team-nim">NIM: 40030622650094</p>
+                        <p class="member-position">Anggota Kelompok 4</p>
+                        <p class="member-bio">
+                            Mengumpulkan dan menganalisis data pertanahan peta zona nilai tanah
+                        </p>
+                    </p>
+                    <div class="team-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="team-contact">
+                        
+                    </div>
+                 </div>
+                 
+                 <div class="team-card">
+                        <div class=background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #d97706;">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <img src="Image/Firyal.jpg" Firyal Daffa’aisy- Anggota Kelomppok 5" class="team-photo">
+                        <h3 class="member-name">Firyal Daffa’ais</h3>
+                            <p class="team-nim">NIM: 40030622650016</p>
+                        <p class="member-position">Anggota Kelompok 5</p>
+                        <p class="member-bio">
+                            Mengumpulkan dan menganalisis data pertanahan peta penggunaan lahan
+                        </p>
+                    </p>
+                    <div class="team-social">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="team-contact">
+                        
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class=background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #d97706;">
+                    <i class="fas fa-code"></i>
+                </div>
+                <img src="Image/" Aisya Nur Alina- Anggota Kelomppok 6" class="team-photo">
+                <h3 class="member-name">Aisya Nur Alina</h3>
+                    <p class="team-nim">NIM: 40030622650111</p>
+                <p class="member-position">Anggota Kelompok 6</p>
+                <p class="member-bio">
+                    Merumuskan aktivitas sistem
+
+                </p>
+            </p>
+            <div class="team-social">
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="team-contact">
+                
+            </div>
+        </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-landmark"></i> Pemerintah Desa Banyusri</h3>
+                <p>Sistem Informasi Pertanahan Digital yang transparan dan akuntabel untuk melayani masyarakat dengan lebih baik. Komitmen kami adalah memberikan pelayanan terbaik dalam bidang pertanahan.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-cogs"></i> Layanan</h3>
+                <p><a href="peta.html"><i class="fas fa-map"></i> Peta Digital</a></p>
+                <p><a href="database.html"><i class="fas fa-database"></i> Database Pertanahan</a></p>
+                <p><a href="layanan.html"><i class="fas fa-file-alt"></i> Administrasi Online</a></p>
+                <p><a href="monitoring.html"><i class="fas fa-chart-line"></i> Monitoring</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-phone-alt"></i> Kontak Kami</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Jl. Desa Banyusri No. 123, Kecamatan XYZ</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <span>(0274) 123-4567</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>siputat@desabanyusri.go.id</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-fax"></i>
+                    <span>(0274) 123-4568</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-clock"></i> Jam Operasional</h3>
+                <p><i class="fas fa-calendar-day"></i> Senin - Jumat: 08:00 - 16:00 WIB</p>
+                <p><i class="fas fa-calendar-day"></i> Sabtu: 08:00 - 12:00 WIB</p>
+                <p><i class="fas fa-calendar-times"></i> Minggu: Libur</p>
+                <p style="margin-top: 20px; color: #3b82f6; font-weight: 600;">
+                    <i class="fas fa-globe"></i> Layanan Online: 24/7
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pemerintah Desa Banyusri. Sistem Informasi Pusat Pertanahan (SIPUTAT). Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Interactive hover effects
+        document.querySelectorAll('.team-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Social media link interactions
+        document.querySelectorAll('.team-social a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Add your social media link logic here
+                console.log('Social media link clicked:', this.title);
+            });
+        });
+    </script>
+</body>
+</html>
